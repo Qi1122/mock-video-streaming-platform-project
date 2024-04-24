@@ -35,22 +35,6 @@ const VideoPlayer = ({ videoSrc }) => {
         }
     };
 
-
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [isFullscreen, setIsFullscreen] = useState(false);
-
-    // const handleVideoPlay = () => {
-    //     setIsPlaying(true);
-    // };
-
-    const handleVideoPause = () => {
-        setIsPlaying(false);
-    };
-    const handleFullscreenChange = (state) => {
-        console.log(state);
-        setIsFullscreen(state);
-    };
-
     return (
         <div className="video-container">
             <Player ref={playerRef} // Assign the ref to the ReactPlayer component
@@ -58,8 +42,6 @@ const VideoPlayer = ({ videoSrc }) => {
                     controls={true}
                     playing={true}
                     muted={true}
-                    // width={1280}
-                    // height={720}
                 width='100%'
                 height='100%'
                     config={{
@@ -70,11 +52,7 @@ const VideoPlayer = ({ videoSrc }) => {
                         },
                         fullscreen: false, // Disable fullscreen
                     }}
-
-                // onFullscreenChange={handleFullscreenChange}
-                // onPlay={handlePlay}
             />
-            {/*<button onClick={handleToggleFullscreen}>Toggle Fullscreen</button>*/}
         </div>
     );
 };
